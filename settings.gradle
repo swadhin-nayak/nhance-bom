@@ -9,3 +9,4 @@
  */
 
 rootProject.name = 'nhance-api-address'
+include 'nhance-bom-organization'
