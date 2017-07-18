@@ -1,3 +1,18 @@
 [submodule "nhance-bom-organization"]
 	path = nhance-bom-organization
 	url = https://github.com/saroj3030/nhance-bom-organization
+[submodule "nhance-bom-address"]
+	path = nhance-bom-address
+	url = https://github.com/saroj3030/nhance-bom-address
+[submodule "nhance-bom-base"]
+	path = nhance-bom-base
+	url = https://github.com/saroj3030/nhance-bom-base
+[submodule "nhance-bom-entity"]
+	path = nhance-bom-entity
+	url = https://github.com/saroj3030/nhance-bom-entity
+[submodule "nhance-bom-masterdata"]
+	path = nhance-bom-masterdata
+	url = https://github.com/saroj3030/nhance-bom-masterdata
+[submodule "nhance-bom-user"]
+	path = nhance-bom-user
+	url = https://github.com/saroj3030/nhance-bom-user

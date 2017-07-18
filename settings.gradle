@@ -10,3 +10,8 @@
 
 rootProject.name = 'nhance-api-address'
 include 'nhance-bom-organization'
+include 'nhance-bom-address'
+include 'nhance-bom-base'
+include 'nhance-bom-entity'
+include 'nhance-bom-masterdata'
+include 'nhance-bom-user'
