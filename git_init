@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+git pull origin dev
+git submodule init
+git submodule update --init --recursive
+git submodule foreach git checkout dev
+git submodule foreach git pull origin dev
+
