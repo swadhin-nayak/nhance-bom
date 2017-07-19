@@ -8,7 +8,7 @@
  * in the user guide at https://docs.gradle.org/3.5/userguide/multi_project_builds.html
  */
 
-rootProject.name = 'nhance-api-address'
+rootProject.name = 'nhance-bom'
 include 'nhance-bom-organization'
 include 'nhance-bom-address'
 include 'nhance-bom-base'
