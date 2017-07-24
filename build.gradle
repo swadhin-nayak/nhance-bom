@@ -5,27 +5,10 @@
  * For more details take a look at the Java Libraries chapter in the Gradle
  * user guide available at https://docs.gradle.org/3.5/userguide/java_library_plugin.html
  */
- 
-buildscript {
-    repositories {
-        maven {
-            url 'http://192.168.0.152:8082/artifactory/plugins-release'
-            credentials {
-                username = "${artifactory_user}"
-                password = "${artifactory_password}"
-            }
-        }
-    }
-    dependencies {
-        //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
-    }
-}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
-apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven-publish'
 
 sourceSets {
@@ -36,36 +19,39 @@ sourceSets {
    }
 }
 
-artifactory {
-    contextUrl = "${artifactory_contextUrl}" 
-    publish {
-        repository {
-            repoKey = 'ext-release-local'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true
-            
+repositories {
+    maven{
+    credentials {
+            username "$archivaUserName"
+            password "$archivaPassword"
         }
-        defaults {
-            publications ('mavenJava')
-        }
-    }
-    resolve {
-        repository {
-            repoKey = 'ext-release-local'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
-            maven = true
-            
-        }
-    }
+    url "$archivaUrl"
+  }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
 }
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+         mavenJava(MavenPublication) {
             from components.java
+            
+            artifact sourceJar {
+                classifier "sources"
+            }
         }
+    }
+    // telling gradle to publish artifact to local directory (3)
+    repositories {
+    	maven {
+      		credentials {
+        		username "$archivaUserName"
+        		password "$archivaPassword"
+      		}
+      		url "$archivaSnapshotUrl"
+      	}
     }
 }
 
