@@ -68,6 +68,10 @@ ext {
 	mapStructVersion = '1.1.0.Final'
 	springDataNeo4jVersion = '4.2.0.RELEASE'
 	springDataRestVersion = '2.5.2.RELEASE'
+	nhanceBomVersion = '1.0.0.BUILD-SNAPSHOT'
+	nhanceApiVersion = '1.0.0.BUILD-SNAPSHOT'
+	nhanceUtilVersion = '1.0.0.BUILD-SNAPSHOT'
+	nhanceMessagingVersion = '1.0.0.BUILD-SNAPSHOT'
 	idPrefix = 'api'
 }
 
@@ -82,10 +86,10 @@ configurations {
 }
 
 dependencies {
-	compile "com.nhance.bom:nhance-bom-base:$version"
-	compile "com.nhance.bom:nhance-bom-entity:$version"
-	compile "com.nhance.bom:nhance-bom-address:$version"
-	compile "com.nhance.bom:nhance-bom-masterdata:$version"
+	compile "com.nhance.bom:nhance-bom-base:$nhanceBomVersion"
+	compile "com.nhance.bom:nhance-bom-entity:$nhanceBomVersion"
+	compile "com.nhance.bom:nhance-bom-address:$nhanceBomVersion"
+	compile "com.nhance.bom:nhance-bom-masterdata:$nhanceBomVersion"
 	
 	compile "log4j:log4j:$log4jVersion"
 	compile "org.slf4j:slf4j-api:$slf4jVersion"
