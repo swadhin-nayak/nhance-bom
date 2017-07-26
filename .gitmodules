@@ -16,3 +16,6 @@
 [submodule "nhance-bom-user"]
 	path = nhance-bom-user
 	url = https://github.com/saroj3030/nhance-bom-user
+[submodule "nhance-bom-product"]
+	path = nhance-bom-product
+	url = https://github.com/saroj3030/nhance-bom-product
